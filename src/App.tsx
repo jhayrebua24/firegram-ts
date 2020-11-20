@@ -1,10 +1,12 @@
 import React from 'react';
 import Title from './comps/Title';
+import UploadForm from './comps/UploadForm';
 
-function App() {
+function App(): React.ReactNode {
   return (
     <div className="App">
-      <Title/>
+      <Title />
+      <UploadForm />
     </div>
   );
 }
