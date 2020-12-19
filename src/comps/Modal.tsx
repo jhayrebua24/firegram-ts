@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
+import { motion } from 'framer-motion';
 
 interface Props {
   selectedImage: string | null;
@@ -14,9 +15,19 @@ function Modal({ selectedImage, setSelectedImage }: Props): JSX.Element {
   };
 
   return (
-    <div className="backdrop" onClick={handleClick}>
-      <img src={selectedImage || undefined} alt="large pic" />
-    </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="backdrop"
+      onClick={handleClick}
+    >
+      <motion.img
+        initial={{ y: '-100vh' }}
+        animate={{ y: 0 }}
+        src={selectedImage || undefined}
+        alt="large pic"
+      />
+    </motion.div>
   );
 }
 

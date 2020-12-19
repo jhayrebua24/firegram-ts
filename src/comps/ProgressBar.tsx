@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import useStorage from '../hooks/useStorage';
 import { IProgressBar } from '../interface';
 
@@ -9,11 +10,10 @@ function ProgressBar({ file, setFile }: IProgressBar): JSX.Element {
     if (url) setFile(null);
   }, [url, setFile]);
   return (
-    <div
+    <motion.div
       className="progress-bar"
-      style={{
-        width: `${progress}%`,
-      }}
+      initial={{ width: 0 }}
+      animate={{ width: `${progress}%` }}
     />
   );
 }
