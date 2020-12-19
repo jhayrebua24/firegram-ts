@@ -27,11 +27,17 @@
   "plugins": ["react", "jsx-a11y", "import", "prettier", "@typescript-eslint"],
   "rules": {
     // prettier
-    "prettier/prettier": ["error"],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     // TypeScript
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-object-literal-type-assertion": "off",
     "@typescript-eslint/prefer-interface": "off",
